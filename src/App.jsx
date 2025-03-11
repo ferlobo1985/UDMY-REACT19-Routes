@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes, Link } from 'react-router'
 import Home from './components/home';
 import Posts from './components/posts';
 import Profile from './components/profile';
+import PostItem from './components/postItem';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="posts" element={<Posts/>}/>  
+          <Route path="posts/:id" element={<PostItem/>}/>
           <Route path="profile" element={<Profile/>}/>  
         </Routes>  
       </div>
