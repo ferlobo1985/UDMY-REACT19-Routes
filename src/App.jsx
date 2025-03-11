@@ -7,6 +7,11 @@ import Profile from './components/profile';
 import PostItem from './components/postItem';
 import NotFound from './404';
 
+// Nested routes
+import Guests from './components/guests';
+import Admins from './components/admins';
+import Users from './components/users';
+
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +33,9 @@ function App() {
             <li className='nav-item'>
               <Link to="profile" className='nav-link'>Profile</Link>
             </li>
+            <li className='nav-item'>
+              <Link to="users" className='nav-link'>Users</Link>
+            </li>
           </ul>
         </header>
         <Routes>
@@ -35,7 +43,12 @@ function App() {
           <Route path="posts" element={<Posts/>}/>  
           <Route path="posts/:id" element={<PostItem/>}/>
           <Route path="profile" element={<Profile/>}/>  
+          <Route path="users" element={<Users/>}>
+            <Route path='guests' element={<Guests/>}/>
+            <Route path='admins' element={<Admins/>}/>
+          </Route>
           <Route path="*" element={<NotFound/>}/>
+          
           {/* <Route path="profile" element={
             <Navigate replace to="/"/>
           }/>  */}
