@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Link, HashRouter, MemoryRouter, NavLink } from 'react-router'
+import { BrowserRouter, Route, Routes, Link, HashRouter, MemoryRouter, NavLink,Navigate } from 'react-router'
 
 /// COMPONENTS
 import Home from './components/home';
@@ -34,6 +34,9 @@ function App() {
           <Route path="posts" element={<Posts/>}/>  
           <Route path="posts/:id" element={<PostItem/>}/>
           <Route path="profile" element={<Profile/>}/>  
+          {/* <Route path="profile" element={
+            <Navigate replace to="/"/>
+          }/>  */}
         </Routes>  
       </div>
     </BrowserRouter>
