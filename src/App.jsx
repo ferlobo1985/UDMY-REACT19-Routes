@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { BrowserRouter, Route, Routes, Link } from 'react-router'
 
 /// COMPONENTS
 import Home from './components/home';
@@ -9,7 +9,13 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        Header
+        <Link to="/">Home</Link><br/>
+        <Link to="posts">Posts</Link><br/>
+        <Link to={{
+          pathname:'profile',
+          hash:'#francis',
+          search:'?profile=true'
+        }}>Profile</Link><br/>
       </header>
       <Routes>
         <Route path="/" element={<Home/>}/>
