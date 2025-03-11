@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Link } from 'react-router'
+import { BrowserRouter, Route, Routes, Link, HashRouter, MemoryRouter, NavLink } from 'react-router'
 
 /// COMPONENTS
 import Home from './components/home';
@@ -17,7 +17,9 @@ function App() {
 
           <ul className='nav nav-pills'>
             <li className='nav-item'>
-              <Link to="/" className='nav-link'>Home</Link>
+              <NavLink to="/" 
+                className={({isActive})=>isActive ? 'nav-link active':'nav-link'}
+              >Home</NavLink>
             </li>
             <li className='nav-item'>
               <Link to="posts" className='nav-link'>Posts</Link>
