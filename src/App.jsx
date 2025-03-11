@@ -5,6 +5,7 @@ import Home from './components/home';
 import Posts from './components/posts';
 import Profile from './components/profile';
 import PostItem from './components/postItem';
+import NotFound from './404';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="posts" element={<Posts/>}/>  
           <Route path="posts/:id" element={<PostItem/>}/>
           <Route path="profile" element={<Profile/>}/>  
+          <Route path="*" element={<NotFound/>}/>
           {/* <Route path="profile" element={
             <Navigate replace to="/"/>
           }/>  */}
